@@ -12,6 +12,9 @@ plantfolio-site/
 ├── styles.css              # Shared styles
 ├── TRANSLATIONS.md         # Translation sync reference
 ├── resources/
+│   ├── app_icon.png                  # App icon (quantized)
+│   ├── screenshots/                  # App screenshots (quantized 85–90%)
+│   │   └── app-1.png … app-6.png
 │   └── custom-common-plants-source/  # Step images for guide
 │       ├── step1.png … step5.png
 ├── es/                     # Spanish

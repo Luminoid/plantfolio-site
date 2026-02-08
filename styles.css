@@ -98,12 +98,13 @@ section {
     margin-bottom: 64px;
 }
 
-section.features {
-    padding-top: 2rem;
+main > section:first-of-type {
+    padding-top: 3rem;
 }
 
-section:last-of-type {
+main > section:last-of-type {
     margin-bottom: 0;
+    padding-bottom: 3rem;
 }
 
 h2 {
@@ -228,7 +229,7 @@ h2 {
 
 /* Support */
 .support {
-    padding: 0;
+    padding: 0 0 2rem 0;
 }
 
 .support p {
@@ -252,28 +253,139 @@ h2 {
     color: var(--primary-muted);
 }
 
-.app-store-buttons {
+/* Screenshots Section */
+.screenshots h2 {
+    margin-bottom: 1.5rem;
+}
+
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.screenshot-item {
+    margin: 0;
+    text-align: center;
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.screenshot-item figcaption {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+@media (min-width: 640px) {
+    .screenshot-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 720px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .screenshot-grid {
+        grid-template-columns: repeat(6, 1fr);
+        max-width: none;
+        gap: 1rem;
+    }
+    
+    .screenshot-item img {
+        border-radius: 20px;
+    }
+}
+
+/* App Download Section */
+.app-download {
+    padding: 0;
+}
+
+.app-download-card {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    align-items: center;
     justify-content: center;
+    gap: 2.5rem;
+    padding: 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.app-device-frame {
+    flex-shrink: 0;
+    width: 180px;
+}
+
+.device-screenshot {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 32px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.app-icon {
+    display: block;
+    margin: 0 auto 0.75rem;
+    border-radius: 16px;
+}
+
+.app-download-content {
+    text-align: center;
+}
+
+.app-download-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+}
+
+.app-download-subtitle {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.app-store-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.app-badge-link {
+    display: block;
+    line-height: 0;
+}
+
+.app-badge {
+    height: 40px;
+    width: auto;
+    display: block;
+    transition: opacity 0.15s;
+}
+
+.app-badge-link:hover .app-badge {
+    opacity: 0.85;
+}
+
+.app-download-requirements {
+    font-size: 0.8125rem;
+    color: var(--text-light);
     margin-top: 1rem;
-}
-
-.app-store-btn {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: var(--primary);
-    color: var(--surface) !important;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.875rem;
-    border-radius: 8px;
-    transition: background 0.15s;
-}
-
-.app-store-btn:hover {
-    background: var(--primary-muted);
 }
 
 .system-requirements {
@@ -330,6 +442,14 @@ footer a:hover {
     section {
         margin-bottom: 48px;
     }
+
+    main > section:first-of-type {
+        padding-top: 2rem;
+    }
+
+    main > section:last-of-type {
+        padding-bottom: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -341,11 +461,17 @@ footer a:hover {
         padding: 24px;
     }
 
-    .app-store-buttons {
-        flex-direction: column;
+    .app-download-card {
+        padding: 1.5rem;
+        gap: 1.5rem;
     }
 
-    .app-store-btn {
-        text-align: center;
+    .app-device-frame {
+        width: 120px;
+        height: 240px;
+    }
+
+    .app-badge {
+        height: 36px;
     }
 }
