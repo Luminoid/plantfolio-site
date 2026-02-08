@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Plantfolio 植物志 - iOS 植物养护管理应用。记录植物、管理浇水、整理收藏、用照片记录生长，并保存详细养护记录。">
-    <title>Plantfolio 植物志 - iOS 植物养护管理应用</title>
+    <meta name="description" content="Plantfolio 植物志 - iPhone、iPad、Mac 植物养护应用。记录植物、季节浇水、收藏、照片、养护记录。800+ 植物建议含毒性、湿度、排水、主屏小组件、iCloud 同步。">
+    <title>Plantfolio 植物志 - iPhone、iPad 与 Mac 植物养护</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="alternate" hreflang="zh-Hans" href="index.html">
+    <link rel="alternate" hreflang="es" href="../es/">
     <link rel="alternate" hreflang="en" href="../index.html">
 </head>
 <body>
@@ -15,7 +19,7 @@
             <p class="lang-switcher"><a href="../index.html">English</a> · <a href="../es/">Español</a></p>
             <h1 class="app-name">Plantfolio 植物志</h1>
             <p class="tagline">养护与生长记录</p>
-            <p class="description">记录植物、管理浇水周期、整理收藏、用照片记录生长，还能保存详细养护记录——一个应用全搞定。</p>
+            <p class="description">记录植物、季节浇水、整理收藏、照片记录生长、详细养护记录。主屏小组件、800+ 植物建议、iCloud 同步——一个应用全搞定。</p>
         </div>
     </header>
 
@@ -28,9 +32,8 @@
                     <div class="feature-icon">🌿</div>
                     <h3>植物与收藏</h3>
                     <ul>
-                        <li>添加植物，记录名称、备注、光照和土壤偏好</li>
-                        <li>把植物归入收藏（如厨房、阳台）</li>
-                        <li>搜索、排序、筛选，或归档暂时不养的植物</li>
+                        <li>添加植物，记录名称、学名、光照、湿度、排水、土壤——或从 800+ 建议中选择，含养护说明、毒性、USDA 耐寒区</li>
+                        <li>归入收藏（如厨房、阳台）；搜索、排序、筛选、归档</li>
                     </ul>
                 </div>
 
@@ -38,9 +41,8 @@
                     <div class="feature-icon">📅</div>
                     <h3>浇水与日历</h3>
                     <ul>
-                        <li>今日该浇、已逾期、即将到期，列表或日历一目了然</li>
-                        <li>按季节自动调整浇水节奏，该多浇少浇都帮你算好</li>
-                        <li>记录浇水并写备注；一个收藏一键全部已浇</li>
+                        <li>列表（逾期、今日、即将）或月历视图，显示浇水计数</li>
+                        <li>季节间隔自动调节；补记历史、批量标记，或一个收藏一键全浇</li>
                     </ul>
                 </div>
 
@@ -48,9 +50,16 @@
                     <div class="feature-icon">📸</div>
                     <h3>照片</h3>
                     <ul>
-                        <li>为每株植物或收藏添加照片，尽量从相机读取日期</li>
-                        <li>按类型整理：生长、开花、问题等</li>
-                        <li>全屏查看、改日期、裁剪或批量删除</li>
+                        <li>日期从 EXIF 提取；分类：生长、开花、问题、病虫害</li>
+                        <li>全屏查看、改日期、裁剪、批量选择删除</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>主屏小组件</h3>
+                    <ul>
+                        <li>小组件：待浇水植物。中组件：月历。点击即可打开。</li>
                     </ul>
                 </div>
 
@@ -58,8 +67,7 @@
                     <div class="feature-icon">🔔</div>
                     <h3>提醒</h3>
                     <ul>
-                        <li>每天在你设定的时间提醒该浇水的植物</li>
-                        <li>只提醒你正在养的，不打扰已归档的</li>
+                        <li>每天在你设定的时间提醒；仅限活动植物</li>
                     </ul>
                 </div>
 
@@ -67,8 +75,7 @@
                     <div class="feature-icon">🔬</div>
                     <h3>养护记录</h3>
                     <ul>
-                        <li>记录生长（株高、冠幅）、施肥、修剪</li>
-                        <li>每株植物都有完整的时间线，方便回顾</li>
+                        <li>记录生长、施肥、修剪；研究笔记与完整历史，每株时间线清晰</li>
                     </ul>
                 </div>
 
@@ -76,8 +83,8 @@
                     <div class="feature-icon">⚙️</div>
                     <h3>你的数据</h3>
                     <ul>
-                        <li>一键导出或导入备份；iCloud 多设备同步</li>
-                        <li>多语言、多种日期格式，按你的习惯来</li>
+                        <li>所有数据仅保存在你的设备或 iCloud——我们无服务器。导出或导入完整备份；iCloud 多设备同步</li>
+                        <li>多语言（中英西）、日期格式、温度单位</li>
                     </ul>
                 </div>
             </div>
@@ -87,22 +94,29 @@
             <h2>为什么选 Plantfolio 植物志</h2>
             <div class="highlight-list">
                 <div class="highlight-item">
-                    <strong>浇水跟着季节走</strong>
-                    <p>春夏秋冬自动调节节奏，该多浇少浇都有数。</p>
+                    <strong>季节浇水</strong>
+                    <p>无需手动调整——春夏秋冬自动调节节奏。</p>
                 </div>
                 <div class="highlight-item">
-                    <strong>植物养护参考</strong>
-                    <p>内置多种植物类型与养护说明，添加植物时可直接套用、自动填好。</p>
+                    <strong>800+ 植物建议</strong>
+                    <p>28 个分类、800+ 植物，专家级养护信息。一键添加。</p>
                 </div>
                 <div class="highlight-item">
-                    <strong>收藏浇水更省心</strong>
-                    <p>浇一个收藏，里面的植物一起标记已浇，每株的历史仍单独保留。</p>
+                    <strong>高效流程</strong>
+                    <p>主屏一眼看状态；一个收藏一键全浇。每株历史单独保留。</p>
                 </div>
                 <div class="highlight-item">
-                    <strong>数据你做主</strong>
-                    <p>随时导出完整备份或从其他设备导入；iCloud 同步，多设备一致。</p>
+                    <strong>隐私优先</strong>
+                    <p>数据仅保存在你的设备或 iCloud。我们无服务器存储用户数据。</p>
                 </div>
             </div>
+        </section>
+
+        <section class="instructions">
+            <h2>使用说明</h2>
+            <ul class="instruction-list">
+                <li><a href="custom-common-plants.html">如何添加自定义常见植物数据源</a></li>
+            </ul>
         </section>
 
         <section class="support">
@@ -111,8 +125,11 @@
             <p class="contact-email">
                 <a href="mailto:diveintothefog@gmail.com">diveintothefog@gmail.com</a>
             </p>
-            <p class="app-store-note"><a href="https://apps.apple.com/us/app/plantfolio-plus/id6757148663">可在 App Store 下载</a>，适用于 iOS 设备。</p>
-            <p class="system-requirements">需要 iOS 18.0 或更高版本。</p>
+            <div class="app-store-buttons">
+                <a href="https://apps.apple.com/us/app/plantfolio-plus/id6757148663" class="app-store-btn">App Store 下载</a>
+                <a href="https://apps.apple.com/us/mac-app/plantfolio-plus/id6757148663" class="app-store-btn">Mac App Store 下载</a>
+            </div>
+            <p class="system-requirements">需要 iOS 18.0 / iPadOS 18.0 或更高版本（iPhone、iPad）。Mac：需 macOS 15.0 或更高。</p>
         </section>
     </main>
 

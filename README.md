@@ -1,45 +1,46 @@
 # plantfolio-site
 
-Static marketing site for [Plantfolio Plus](https://apps.apple.com/us/app/plantfolio-plus/id6757148663). Landing page, features, and privacy policy. No build step—plain HTML and CSS.
+Static marketing site for [Plantfolio Plus](https://apps.apple.com/us/app/plantfolio-plus/id6757148663). Landing page, features, custom plants guide, and privacy policy. No build step—plain HTML and CSS.
 
 ## Structure
 
 ```
 plantfolio-site/
-├── index.html          # English landing (root)
-├── privacy.html        # English privacy policy
-├── styles.css          # Shared styles
-├── es/                 # Spanish
+├── index.html              # English landing (root)
+├── privacy.html           # English privacy policy
+├── custom-common-plants.html   # Guide: add custom common plants source
+├── styles.css              # Shared styles
+├── TRANSLATIONS.md         # Translation sync reference
+├── resources/
+│   └── custom-common-plants-source/  # Step images for guide
+│       ├── step1.png … step5.png
+├── es/                     # Spanish
 │   ├── index.html
+│   ├── custom-common-plants.html
 │   └── privacy.html
-├── zh/                 # Chinese (Simplified)
+├── zh/                     # Chinese (Simplified)
 │   ├── index.html
+│   ├── custom-common-plants.html
 │   └── privacy.html
-├── .nojekyll           # GitHub Pages
-└── .cursor/            # Cursor context and rules
+├── .nojekyll               # GitHub Pages
+└── .cursor/                # Cursor context and rules
 ```
 
 ## Locales
 
-| Locale | Path |
-|--------|------|
-| English | `/` (index.html, privacy.html) |
-| Spanish | `/es/` |
-| Chinese (Simplified) | `/zh/` |
+| Locale | Path | Pages |
+|--------|------|-------|
+| English | `/` | index, privacy, custom-common-plants |
+| Spanish | `/es/` | index, privacy, custom-common-plants |
+| Chinese (Simplified) | `/zh/` | index, privacy, custom-common-plants |
+
+## Translation sync
+
+When editing content, update all three locales. See `TRANSLATIONS.md` for string mapping.
 
 ## Content
 
-- **Features**: Plants & Collections, Watering & Calendar, Photos, Reminders, Care Logs, Your Data (export/import, iCloud)
-- **Highlights**: Seasonal watering, plant care library, collections, data control
-- **App Store**: [Plantfolio Plus](https://apps.apple.com/us/app/plantfolio-plus/id6757148663)
-
-Feature alignment with the app: site highlights match app capabilities. Widgets and Mac Catalyst are app-only and not emphasized on the site.
-
-## Context & Rules
-
-- **Context**: [.cursor/CONTEXT.md](.cursor/CONTEXT.md) — project overview, structure, conventions
-- **Rules**: [.cursor/rules/](.cursor/rules/) — HTML/CSS conventions
-
-## Ecosystem
-
-Part of the Plantfolio ecosystem. See [Projects/README.md](../README.md). If hosting plantfolio-common-plants for custom URL, serve at `/plantfolio-common-plants/` per the plantfolio-common-plants README.
+- **Features**: Plants & Collections, Watering & Calendar, Photos, Home Screen Widgets, Reminders, Care Logs, Your Data
+- **Highlights**: Seasonal watering, 800+ plant suggestions (28 categories, toxicity, humidity, drainage, USDA zones), widgets, collections, privacy-first
+- **Platforms**: iPhone, iPad, Mac (Catalyst)
+- **App Store**: [iOS](https://apps.apple.com/us/app/plantfolio-plus/id6757148663) · [Mac](https://apps.apple.com/us/mac-app/plantfolio-plus/id6757148663)

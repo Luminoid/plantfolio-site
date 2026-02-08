@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to add a custom common plants source in Plantfolio Plus - Use your own plant data or our default sources.">
+    <title>Custom Common Plants Source - Plantfolio Plus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="alternate" hreflang="zh-Hans" href="zh/custom-common-plants.html">
+    <link rel="alternate" hreflang="es" href="es/custom-common-plants.html">
+    <link rel="alternate" hreflang="en" href="custom-common-plants.html">
+    <style>
+        .guide-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+        .guide-content h1 {
+            color: var(--primary-green);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .guide-content .intro {
+            text-align: center;
+            color: var(--text-medium);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+        .guide-step {
+            margin-bottom: 3rem;
+        }
+        .guide-step img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            display: block;
+            margin: 1rem auto 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px var(--shadow);
+        }
+        .guide-step h2 {
+            font-size: 1.5rem;
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
+        .guide-step p {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+        .guide-step ul {
+            margin: 1rem 0 1rem 1.5rem;
+            color: var(--text-medium);
+        }
+        .guide-content code {
+            background: var(--background);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .guide-step .step-num {
+            color: var(--lighter-green);
+            font-weight: 600;
+        }
+        .guide-tip {
+            background: var(--background);
+            border-left: 4px solid var(--lighter-green);
+            padding: 1rem 1.5rem;
+            margin-top: 2rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .guide-tip p {
+            margin: 0;
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+        .default-source {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        .default-source h3 {
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+        .default-source-row {
+            margin-bottom: 1rem;
+        }
+        .default-source-row:last-child {
+            margin-bottom: 0;
+        }
+        .default-source-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+        .default-source-url-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .default-source-url-wrap:last-child {
+            margin-bottom: 0;
+        }
+        .default-source-url {
+            flex: 1;
+            font-family: ui-monospace, 'SF Mono', Monaco, monospace;
+            font-size: 0.85rem;
+            background: var(--background);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            word-break: break-all;
+            user-select: all;
+            cursor: text;
+        }
+        .copy-btn {
+            flex-shrink: 0;
+            padding: 0.4rem 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--primary-green);
+            background: var(--white);
+            border: 1px solid var(--lighter-green);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .copy-btn:hover {
+            background: var(--lighter-green);
+            color: var(--white);
+        }
+        .copy-btn.copied {
+            background: var(--lighter-green);
+            color: var(--white);
+            border-color: var(--lighter-green);
+        }
+        .default-source-url a {
+            color: var(--light-green);
+            text-decoration: none;
+        }
+        .default-source-url a:hover {
+            text-decoration: underline;
+        }
+        .default-source .repo-link {
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        .repo-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--text-dark);
+            color: var(--white) !important;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .repo-link-btn:hover {
+            background: #333;
+            color: var(--white) !important;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+        .repo-link-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+        .repo-link-meta {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        .default-source-url-list .default-source-url-wrap {
+            margin-bottom: 0.5rem;
+        }
+        .default-source-url-list .default-source-url-wrap:last-child {
+            margin-bottom: 0;
+        }
+        .lang-tag {
+            display: inline-block;
+            min-width: 1.8em;
+            color: var(--text-light);
+            font-size: 0.8em;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--light-green);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            color: var(--primary-green);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="guide-content">
+            <p class="lang-switcher"><a href="index.html">English</a> · <a href="zh/custom-common-plants.html">中文</a> · <a href="es/custom-common-plants.html">Español</a></p>
+            <a href="index.html" class="back-link">← Back to Plantfolio Plus</a>
+
+            <h1>How to Add a Custom Common Plants Source</h1>
+            <p class="intro">
+                You can download plant suggestions from a custom HTTPS URL. Use a folder URL (ending with <code>/</code>) for per-language files, or a direct JSON URL for a single file. Source priority when switching language: folder file for current language → direct JSON → built-in. Localhost and private IPs are blocked for security. Default links are also listed below—tap to select and copy.
+            </p>
+
+            <div class="default-source">
+                <h3>Default data source</h3>
+                <div class="default-source-row">
+                    <div class="default-source-label">Folder URL (recommended — auto-switches by app language)</div>
+                    <div class="default-source-url-wrap">
+                        <div class="default-source-url">https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/</div>
+                        <button type="button" class="copy-btn" data-copy="https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/">Copy</button>
+                    </div>
+                </div>
+                <div class="default-source-row">
+                    <div class="default-source-label">Direct JSON (single language)</div>
+                    <div class="default-source-url-list">
+                        <div class="default-source-url-wrap">
+                            <div class="default-source-url"><span class="lang-tag">EN</span> https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/common_plants.json</div>
+                            <button type="button" class="copy-btn" data-copy="https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/common_plants.json">Copy</button>
+                        </div>
+                        <div class="default-source-url-wrap">
+                            <div class="default-source-url"><span class="lang-tag">ES</span> https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/common_plants_es.json</div>
+                            <button type="button" class="copy-btn" data-copy="https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/common_plants_es.json">Copy</button>
+                        </div>
+                        <div class="default-source-url-wrap">
+                            <div class="default-source-url"><span class="lang-tag">ZH</span> https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/common_plants_zh-Hans.json</div>
+                            <button type="button" class="copy-btn" data-copy="https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/common_plants_zh-Hans.json">Copy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="repo-link">
+                <a href="https://github.com/Luminoid/plantfolio-common-plants" target="_blank" rel="noopener" class="repo-link-btn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+                <p class="repo-link-meta">800 plants · 28 categories · toxicity, humidity, drainage, USDA zones · EN, ES, zh-Hans</p>
+            </div>
+            </div>
+
+            <div class="guide-step">
+                <h2><span class="step-num">Step 1.</span> Open Settings</h2>
+                <p>Open Plantfolio and go to <strong>Settings</strong>. Scroll to the <strong>Custom Common Plants Source</strong> section.</p>
+                <img src="resources/custom-common-plants-source/step1.png" alt="Settings screen showing Custom Common Plants Source section">
+            </div>
+
+            <div class="guide-step">
+                <h2><span class="step-num">Step 2.</span> Choose a Source</h2>
+                <p>Find your preferred custom plant source, or use our default ones. Tap the <strong>Instruction icon</strong> to see the default links and copy them.</p>
+                <img src="resources/custom-common-plants-source/step2.png" alt="Custom plant source options and instruction item">
+            </div>
+
+            <div class="guide-step">
+                <h2><span class="step-num">Step 3.</span> Enter the URL</h2>
+                <p>Tap the URL field and paste your source URL. You can use either:</p>
+                <ul>
+                    <li><strong>Folder URL</strong> (ending with <code>/</code>) — for per-language JSON files (e.g. <code>common_plants.json</code>, <code>common_plants_zh-Hans.json</code>)</li>
+                    <li><strong>Direct JSON URL</strong> — for a single language file</li>
+                </ul>
+                <img src="resources/custom-common-plants-source/step3.png" alt="URL input field with paste option">
+            </div>
+
+            <div class="guide-step">
+                <h2><span class="step-num">Step 4.</span> Download</h2>
+                <p>Tap <strong>Download Now</strong> to fetch and install the plant data. The app will validate the source before applying it.</p>
+                <img src="resources/custom-common-plants-source/step4.png" alt="Download Now button">
+            </div>
+
+            <div class="guide-step">
+                <h2><span class="step-num">Step 5.</span> Use Your Plants</h2>
+                <p>Your new common plants data is now available. Go to the <strong>Common Plants</strong> page (when adding or editing a plant) to find the updated suggestions.</p>
+                <img src="resources/custom-common-plants-source/step5.png" alt="Common Plants page with plant suggestions">
+            </div>
+
+            <div class="guide-tip">
+                <p><strong>Tip:</strong> Default links are ready to copy in the app. Tap the Instruction icon in Settings → Custom Common Plants Source to view them.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Chunhou Li. All rights reserved.</p>
+            <p><a href="privacy.html">Privacy Policy</a> · <a href="index.html">Home</a></p>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const text = btn.getAttribute('data-copy');
+                if (!text) return;
+                try {
+                    await navigator.clipboard.writeText(text);
+                    const label = btn.textContent;
+                    btn.textContent = 'Copied!';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.textContent = label;
+                        btn.classList.remove('copied');
+                    }, 1500);
+                } catch (err) {
+                    btn.textContent = 'Copy failed';
+                    setTimeout(() => btn.textContent = 'Copy', 1500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

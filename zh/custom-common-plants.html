@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="如何在 Plantfolio 植物志中添加自定义常见植物数据源 - 使用自己的植物数据或我们的默认数据源。">
+    <title>添加自定义常见植物数据源 - Plantfolio 植物志</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="alternate" hreflang="zh-Hans" href="custom-common-plants.html">
+    <link rel="alternate" hreflang="es" href="../es/custom-common-plants.html">
+    <link rel="alternate" hreflang="en" href="../custom-common-plants.html">
+    <style>
+        .guide-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+        .guide-content h1 {
+            color: var(--primary-green);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .guide-content .intro {
+            text-align: center;
+            color: var(--text-medium);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+        .guide-step {
+            margin-bottom: 3rem;
+        }
+        .guide-step img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            display: block;
+            margin: 1rem auto 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px var(--shadow);
+        }
+        .guide-step h2 {
+            font-size: 1.5rem;
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
+        .guide-step p {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+        .guide-step ul {
+            margin: 1rem 0 1rem 1.5rem;
+            color: var(--text-medium);
+        }
+        .guide-content code {
+            background: var(--background);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .guide-step .step-num {
+            color: var(--lighter-green);
+            font-weight: 600;
+        }
+        .guide-tip {
+            background: var(--background);
+            border-left: 4px solid var(--lighter-green);
+            padding: 1rem 1.5rem;
+            margin-top: 2rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .guide-tip p {
+            margin: 0;
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+        .default-source {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        .default-source h3 {
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+        .default-source-row {
+            margin-bottom: 1rem;
+        }
+        .default-source-row:last-child {
+            margin-bottom: 0;
+        }
+        .default-source-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+        .default-source-url-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .default-source-url-wrap:last-child {
+            margin-bottom: 0;
+        }
+        .default-source-url {
+            flex: 1;
+            font-family: ui-monospace, 'SF Mono', Monaco, monospace;
+            font-size: 0.85rem;
+            background: var(--background);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            word-break: break-all;
+            user-select: all;
+            cursor: text;
+        }
+        .default-source-url a {
+            color: var(--light-green);
+            text-decoration: none;
+        }
+        .default-source-url a:hover {
+            text-decoration: underline;
+        }
+        .default-source .repo-link {
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        .repo-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--text-dark);
+            color: var(--white) !important;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .repo-link-btn:hover {
+            background: #333;
+            color: var(--white) !important;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+        .repo-link-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+        .repo-link-meta {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        .copy-btn {
+            flex-shrink: 0;
+            padding: 0.4rem 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--primary-green);
+            background: var(--white);
+            border: 1px solid var(--lighter-green);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .copy-btn:hover {
+            background: var(--lighter-green);
+            color: var(--white);
+        }
+        .copy-btn.copied {
+            background: var(--lighter-green);
+            color: var(--white);
+            border-color: var(--lighter-green);
+        }
+        .default-source-url-list .default-source-url-wrap {
+            margin-bottom: 0.5rem;
+        }
+        .default-source-url-list .default-source-url-wrap:last-child {
+            margin-bottom: 0;
+        }
+        .lang-tag {
+            display: inline-block;
+            min-width: 1.8em;
+            color: var(--text-light);
+            font-size: 0.8em;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--light-green);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            color: var(--primary-green);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="guide-content">
+            <p class="lang-switcher"><a href="../index.html">English</a> · <a href="custom-common-plants.html">中文</a> · <a href="../es/custom-common-plants.html">Español</a></p>
+            <a href="index.html" class="back-link">← 返回 Plantfolio 植物志</a>
+
+            <h1>如何添加自定义常见植物数据源</h1>
+            <p class="intro">
+                你可以从自定义 HTTPS 链接下载植物建议数据。使用文件夹链接（以 <code>/</code> 结尾）可提供多语言文件，或使用直接 JSON 链接提供单一语言文件。切换语言时的优先级：当前语言的文件夹文件 → 直接 JSON → 内置数据。出于安全考虑，本地地址和私有 IP 会被拒绝。下方也提供默认链接，点选即可复制。
+            </p>
+
+            <div class="default-source">
+                <h3>默认数据源</h3>
+                <div class="default-source-row">
+                    <div class="default-source-label">文件夹链接（推荐，会随应用语言自动切换）</div>
+                    <div class="default-source-url-wrap">
+                        <div class="default-source-url">https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/</div>
+                        <button type="button" class="copy-btn" data-copy="https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/">复制</button>
+                    </div>
+                </div>
+                <div class="default-source-row">
+                    <div class="default-source-label">直接 JSON（单一语言）</div>
+                    <div class="default-source-url-list">
+                        <div class="default-source-url-wrap">
+                            <div class="default-source-url"><span class="lang-tag">EN</span> https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/common_plants.json</div>
+                            <button type="button" class="copy-btn" data-copy="https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/common_plants.json">复制</button>
+                        </div>
+                        <div class="default-source-url-wrap">
+                            <div class="default-source-url"><span class="lang-tag">ES</span> https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/common_plants_es.json</div>
+                            <button type="button" class="copy-btn" data-copy="https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/common_plants_es.json">复制</button>
+                        </div>
+                        <div class="default-source-url-wrap">
+                            <div class="default-source-url"><span class="lang-tag">ZH</span> https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/common_plants_zh-Hans.json</div>
+                            <button type="button" class="copy-btn" data-copy="https://raw.githubusercontent.com/Luminoid/plantfolio-common-plants/main/dist/common_plants_zh-Hans.json">复制</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="repo-link">
+                <a href="https://github.com/Luminoid/plantfolio-common-plants" target="_blank" rel="noopener" class="repo-link-btn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    在 GitHub 上查看
+                </a>
+                <p class="repo-link-meta">800 种植物 · 28 个分类 · 毒性、湿度、排水、USDA 耐寒区 · EN、ES、zh-Hans</p>
+            </div>
+            </div>
+
+            <div class="guide-step">
+                <h2><span class="step-num">步骤 1.</span> 打开设置</h2>
+                <p>打开 Plantfolio，进入 <strong>设置</strong>，滚动到 <strong>自定义常见植物数据源</strong> 区域。</p>
+                <img src="../resources/custom-common-plants-source/step1.png" alt="设置界面，显示自定义常见植物数据源区域">
+            </div>
+
+            <div class="guide-step">
+                <h2><span class="step-num">步骤 2.</span> 选择数据源</h2>
+                <p>选择你喜欢的自定义植物数据源，或使用我们的默认数据源。点击 <strong>说明图标</strong> 查看并复制默认链接。</p>
+                <img src="../resources/custom-common-plants-source/step2.png" alt="自定义植物数据源选项与说明图标">
+            </div>
+
+            <div class="guide-step">
+                <h2><span class="step-num">步骤 3.</span> 输入链接</h2>
+                <p>点击链接输入框，粘贴你的数据源链接。可使用：</p>
+                <ul>
+                    <li><strong>文件夹链接</strong>（以 <code>/</code> 结尾）— 用于多语言 JSON 文件（如 <code>common_plants.json</code>、<code>common_plants_zh-Hans.json</code>）</li>
+                    <li><strong>直接 JSON 链接</strong> — 用于单一语言文件</li>
+                </ul>
+                <img src="../resources/custom-common-plants-source/step3.png" alt="链接输入框与粘贴选项">
+            </div>
+
+            <div class="guide-step">
+                <h2><span class="step-num">步骤 4.</span> 下载</h2>
+                <p>点击 <strong>立即下载</strong> 获取并安装植物数据。应用会先验证数据源再应用。</p>
+                <img src="../resources/custom-common-plants-source/step4.png" alt="立即下载按钮">
+            </div>
+
+            <div class="guide-step">
+                <h2><span class="step-num">步骤 5.</span> 使用植物数据</h2>
+                <p>新的常见植物数据已就绪。在添加或编辑植物时，前往 <strong>常见植物</strong> 页面即可看到更新后的建议。</p>
+                <img src="../resources/custom-common-plants-source/step5.png" alt="常见植物页面与植物建议">
+            </div>
+
+            <div class="guide-tip">
+                <p><strong>提示：</strong> 默认链接可在应用内直接复制。在 设置 → 自定义常见植物数据源 中点击说明图标即可查看。</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Chunhou Li. All rights reserved.</p>
+            <p><a href="privacy.html">隐私政策</a> · <a href="index.html">首页</a></p>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const text = btn.getAttribute('data-copy');
+                if (!text) return;
+                try {
+                    await navigator.clipboard.writeText(text);
+                    const label = btn.textContent;
+                    btn.textContent = '已复制';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.textContent = label;
+                        btn.classList.remove('copied');
+                    }, 1500);
+                } catch (err) {
+                    btn.textContent = '复制失败';
+                    setTimeout(() => btn.textContent = '复制', 1500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
