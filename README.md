@@ -6,27 +6,28 @@ Static marketing site for [Plantfolio Plus](https://apps.apple.com/us/app/plantf
 
 ```
 plantfolio-site/
-├── index.html              # English landing (root)
-├── privacy.html           # English privacy policy
-├── custom-common-plants.html   # Guide: add custom common plants source
-├── styles.css              # Shared styles
-├── TRANSLATIONS.md         # Translation sync reference
+├── index.html                  # English landing (root)
+├── privacy.html                # English privacy policy
+├── custom-common-plants.html    # Guide: add custom common plants source
+├── css/
+│   └── styles.css               # Shared styles
+├── TRANSLATIONS.md              # Translation sync reference
 ├── resources/
-│   ├── app_icon.png                  # App icon (quantized)
-│   ├── screenshots/                  # App screenshots (quantized 85–90%)
+│   ├── app_icon.png             # App icon (quantized)
+│   ├── screenshots/             # App screenshots (quantized 85–90%)
 │   │   └── app-1.png … app-6.png
-│   └── custom-common-plants-source/  # Step images for guide
-│       ├── step1.png … step5.png
-├── es/                     # Spanish
+│   └── custom-common-plants-source/  # Step images for custom plants guide
+│       └── step1.png … step5.png
+├── es/                          # Spanish
 │   ├── index.html
 │   ├── custom-common-plants.html
 │   └── privacy.html
-├── zh/                     # Chinese (Simplified)
+├── zh/                          # Chinese (Simplified)
 │   ├── index.html
 │   ├── custom-common-plants.html
 │   └── privacy.html
-├── .nojekyll               # GitHub Pages
-└── .cursor/                # Cursor context and rules
+├── .nojekyll                    # GitHub Pages
+└── .cursor/                     # Cursor context and rules
 ```
 
 ## Locales
