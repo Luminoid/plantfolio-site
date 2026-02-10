@@ -14,7 +14,7 @@ plantfolio-site/
 ├── TRANSLATIONS.md              # Translation sync reference
 ├── resources/
 │   ├── app_icon.png             # App icon (quantized)
-│   ├── screenshots/             # App screenshots (quantized 85–90%)
+│   ├── screenshots/             # App screenshots (quantized 90%)
 │   │   └── app-1.png … app-6.png
 │   └── custom-common-plants-source/  # Step images for custom plants guide
 │       └── step1.png … step5.png
@@ -41,6 +41,14 @@ plantfolio-site/
 ## Translation sync
 
 When editing content, update all three locales. See `TRANSLATIONS.md` for string mapping.
+
+## Scripts
+
+**Compress PNGs (pngquant 90%)** — pass the file(s) or glob so you only run it on what you need (avoid re-compressing already quantized images):
+
+```bash
+pngquant --quality=90-100 --ext .png --force <files-or-glob>
+```
 
 ## Content
 
