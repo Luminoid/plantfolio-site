@@ -14,7 +14,7 @@ plantfolio-site/
 ├── TRANSLATIONS.md              # Translation sync reference
 ├── resources/
 │   ├── app_icon.png             # App icon (quantized)
-│   ├── screenshots/             # App screenshots (quantized 90%)
+│   ├── screenshots/             # App screenshots (device-framed; quantized 90%)
 │   │   └── app-1.png … app-6.png
 │   └── custom-common-plants-source/  # Step images for custom plants guide
 │       └── step1.png … step5.png
@@ -26,8 +26,8 @@ plantfolio-site/
 │   ├── index.html
 │   ├── custom-common-plants.html
 │   └── privacy.html
-├── .nojekyll                    # GitHub Pages
-└── .cursor/                     # Cursor context and rules
+├── .gitignore
+└── .nojekyll                    # GitHub Pages
 ```
 
 ## Locales
