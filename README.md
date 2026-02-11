@@ -52,7 +52,9 @@ pngquant --quality=90-100 --ext .png --force <files-or-glob>
 
 ## Content
 
-- **Features**: Plants & Collections, Watering & Calendar, Photos, Home Screen Widgets, Reminders, Care Logs, Your Data
-- **Highlights**: Seasonal watering, 800+ plant suggestions (28 categories, toxicity, humidity, drainage, USDA zones), widgets, collections, privacy-first
+- **Hero**: App name, tagline, description; lang switcher and App Store badge (alternative white, links to `#download`) top right.
+- **Features**: Plants & Collections, Watering & Calendar, Photos, Home Screen Widgets (small + medium), Reminders, Care Logs, Your Data, Language & Settings
+- **Why Choose**: Smart watering, 800+ plant suggestions, efficient workflow, privacy-first
+- **Download**: Section `id="download"` with app icon, App Store + Mac App Store badges
 - **Platforms**: iPhone, iPad, Mac (Catalyst)
 - **App Store**: [iOS](https://apps.apple.com/us/app/plantfolio-plus/id6757148663) · [Mac](https://apps.apple.com/us/mac-app/plantfolio-plus/id6757148663)

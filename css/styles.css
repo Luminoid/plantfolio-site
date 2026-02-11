@@ -47,6 +47,18 @@ body {
     border-bottom: 1px solid var(--border);
 }
 
+.hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.hero-top .lang-switcher {
+    margin: 0;
+    text-align: left;
+}
+
 .lang-switcher {
     text-align: right;
     margin-bottom: 2rem;
@@ -62,6 +74,19 @@ body {
 
 .lang-switcher a:hover {
     color: var(--primary);
+}
+
+.hero-download-badge {
+    display: block;
+    line-height: 0;
+    background: none;
+    padding: 0;
+}
+
+.hero-badge-img {
+    height: 36px;
+    width: auto;
+    display: block;
 }
 
 .app-name {
@@ -268,14 +293,15 @@ h2 {
 .screenshot-item {
     margin: 0;
     text-align: center;
+    background: var(--bg); /* #fafafa so transparent pixels don’t show white */
 }
 
 .screenshot-item img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 24px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    background: transparent !important; /* prevent forced-colors/UA from filling transparent pixels */
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.1)); /* follows image alpha (rounded edges) */
 }
 
 .screenshot-item figcaption {
@@ -300,14 +326,12 @@ h2 {
         gap: 1rem;
     }
     
-    .screenshot-item img {
-        border-radius: 20px;
-    }
 }
 
 /* App Download Section */
 .app-download {
     padding: 0;
+    scroll-margin-top: 2rem;
 }
 
 .app-download-card {
@@ -317,7 +341,7 @@ h2 {
     justify-content: center;
     gap: 2.5rem;
     padding: 2.5rem;
-    background: var(--surface);
+    background: var(--surface); /* #ffffff; device area uses --bg via .app-device-frame */
     border: 1px solid var(--border);
     border-radius: var(--radius);
 }
@@ -325,13 +349,15 @@ h2 {
 .app-device-frame {
     flex-shrink: 0;
     width: 180px;
+    background: var(--surface); /* #ffffff behind device screenshot */
 }
 
 .device-screenshot {
     width: 100%;
     height: auto;
     display: block;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    background: transparent !important; /* prevent forced-colors/UA from filling transparent pixels */
+    filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.2)); /* follows image alpha (rounded edges) */
 }
 
 .app-icon {
