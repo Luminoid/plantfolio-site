@@ -89,7 +89,7 @@
     <main>
         <div class="privacy-content">
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: February 2026</p>
+            <p class="last-updated">Last Updated: March 2026</p>
 
             <h2>Scope and Acceptance</h2>
             <p>This Privacy Policy ("Policy") governs the collection, use, disclosure, and retention of information in connection with the mobile application "Plantfolio Plus" (the "App"), operated by Chunhou Li ("we," "us," or "our"). By installing, accessing, or using the App, you ("User" or "you") acknowledge that you have read, understood, and agree to be bound by this Policy. If you do not agree to this Policy, you must not use the App.</p>
@@ -114,6 +114,7 @@
             <ul>
                 <li><strong>Plant and collection data:</strong> Names, scientific names, plant types, descriptions, research notes, light and soil preferences, pot materials, seasonal watering schedules, and start dates.</li>
                 <li><strong>Photographs:</strong> Images of plants or collections added to the App, with optional categorical labels (e.g., growth, flowers, problems).</li>
+                <li><strong>Sighting data:</strong> Plant sightings added to the App, including photographs, optional names or notes, and GPS coordinates (latitude and longitude). GPS coordinates may be derived from photo EXIF metadata or from the device's location at the time the sighting is created.</li>
                 <li><strong>Care records:</strong> Watering logs (dates and notes), growth measurements (height, width, notes), fertilization logs (type, NPK, dosage, method, notes), pruning logs (type, technique, notes), and watering rescheduling or postponement.</li>
                 <li><strong>Collection structure:</strong> Grouping of plants into collections and membership of each plant in at most one collection.</li>
                 <li><strong>App settings:</strong> Date format, language preference (e.g., English, Chinese, Spanish), notification preferences (enabled/disabled, reminder time), default sort and filter options, custom soil or pot types, and preference to hide archived plants.</li>
@@ -123,6 +124,7 @@
             <p>The following data may be obtained or derived by the App on the User’s device only; none of such data is transmitted to us:</p>
             <ul>
                 <li><strong>Photo metadata:</strong> EXIF data (e.g., date taken) or the creation date of the photo asset may be read to populate date fields automatically. Such Processing occurs solely on the User’s device.</li>
+                <li><strong>Location data:</strong> When the User adds a sighting, the App may read GPS coordinates from the photo’s EXIF data or, if EXIF location is unavailable, from the device’s current location (with the User’s permission). Such coordinates are stored solely on the User’s device (and, where iCloud sync is enabled, on Apple’s iCloud infrastructure). We do not receive or transmit location data.</li>
                 <li><strong>Date and season:</strong> The device’s date and calendar may be used to determine the current season (for watering schedules) and the current date for reminders and calendar views. No location or timezone data is transmitted to us.</li>
                 <li><strong>Device information:</strong> Apple’s App Store and system services may collect information (e.g., iOS version, device model) in accordance with Apple’s policies. We do not use third-party analytics or tracking.</li>
             </ul>
@@ -131,7 +133,7 @@
             <p>We do not collect, and the App is not designed to collect:</p>
             <ul>
                 <li>Personal identification information (name, email, physical address) except where voluntarily provided by the User when contacting us (e.g., support inquiries).</li>
-                <li>Precise or approximate location data.</li>
+                <li>Precise or approximate location data, except for GPS coordinates voluntarily recorded by the User via the sightings feature, which remain on the User's device (and, where iCloud sync is enabled, on Apple's iCloud infrastructure).</li>
                 <li>Payment or financial information (the App does not process payments).</li>
                 <li>Browsing history or activity outside the App.</li>
             </ul>
@@ -141,7 +143,7 @@
             <h3>2.1 Purposes</h3>
             <p>User Data is Processed solely for the following purposes:</p>
             <ul>
-                <li>To provide and maintain the core functionality of the App (plant and collection management, calendar, watering schedules, photographs, care logs).</li>
+                <li>To provide and maintain the core functionality of the App (plant and collection management, calendar, watering schedules, photographs, care logs, and sightings with map view).</li>
                 <li>To enable optional features such as watering reminders, calendar views, and plant organization.</li>
                 <li>Where the User has enabled iCloud sync, to permit storage and synchronization of User Data across the User’s devices via Apple’s iCloud service. Such Processing is performed by Apple pursuant to the User’s Apple ID and Apple’s terms and privacy policy; we do not perform or control such Processing.</li>
             </ul>
@@ -159,7 +161,7 @@
             <h3>3.1 Location of Data</h3>
             <p>We do not store User Data. All User Data is held in one or both of the following locations only:</p>
             <ul>
-                <li><strong>User’s device:</strong> User Data is stored locally on the User’s device using the SwiftData framework. Such data remains on the device and is not transmitted to us.</li>
+                <li><strong>User’s device:</strong> User Data—including plant data, photographs, sighting locations, and care records—is stored locally on the User’s device using the SwiftData framework. Such data remains on the device and is not transmitted to us.</li>
                 <li><strong>Apple iCloud (optional):</strong> Where the User has enabled iCloud sync, the App uses SwiftData’s CloudKit integration such that a copy of User Data is also stored on infrastructure operated by Apple (iCloud), associated with the User’s Apple ID. We do not have access to such data.</li>
             </ul>
 

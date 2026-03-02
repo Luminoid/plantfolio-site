@@ -23,16 +23,17 @@ Keep EN, ES, and ZH content aligned. When updating one locale, update all three.
 | btn_mac_download | Download on the Mac App Store | Disponible en Mac App Store | Mac App Store 下载 |
 | footer_privacy | Privacy Policy | Política de Privacidad | 隐私政策 |
 
-## Feature cards (7 total)
+## Feature cards (9 total)
 
-Same structure: Plants & Collections, Watering & Calendar, Photos, Home Screen Widgets, Reminders, Care Logs, Your Data.
+Same structure: Plants & Collections, Watering & Calendar, Photos & Care Logs, Sightings & Map, Home Screen Widgets, Reminders, Sharing, Your Data, Language & Settings.
 
-## Highlight items (4 total)
+## Highlight items (5 total)
 
-1. Seasonal watering / Riego estacional / 季节浇水  
-2. 800+ plant suggestions / 800+ sugerencias de plantas / 800+ 植物建议  
-3. Efficient workflow / Flujo eficiente / 高效流程  
-4. Privacy-first / Privacidad primero / 隐私优先  
+1. Works without internet / Funciona sin internet / 离线也能用
+2. Adapts to your seasons / Se adapta a tus estaciones / 随季节自动调整
+3. Beyond the garden / Más allá del jardín / 不止于花园
+4. One app, every device / Una app, todos los dispositivos / 一个应用，所有设备
+5. Own your data / Tus datos, tu control / 数据由你掌控
 
 ## Sync checklist
 

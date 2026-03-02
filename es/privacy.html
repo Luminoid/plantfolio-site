@@ -36,7 +36,7 @@
     <main>
         <div class="privacy-content">
             <h1>Política de Privacidad</h1>
-            <p class="last-updated">Última actualización: Febrero de 2026</p>
+            <p class="last-updated">Última actualización: Marzo de 2026</p>
 
             <h2>Ámbito y Aceptación</h2>
             <p>Esta Política de Privacidad («Política») regula la recopilación, uso, divulgación y conservación de información en relación con la aplicación móvil «Plantfolio Plantas» (la «App»), operada por Chunhou Li («nosotros», «nuestro» o «nos»). Al instalar, acceder o utilizar la App, usted («Usuario» o «usted») reconoce haber leído, comprendido y aceptado quedar obligado por esta Política. Si no está de acuerdo con esta Política, no debe utilizar la App.</p>
@@ -61,6 +61,7 @@
             <ul>
                 <li><strong>Datos de plantas y colecciones:</strong> Nombres, nombres científicos, tipos de plantas, descripciones, notas de investigación, preferencias de luz y suelo, materiales de maceta, calendarios de riego estacionales y fechas de inicio.</li>
                 <li><strong>Fotografías:</strong> Imágenes de plantas o colecciones añadidas a la App, con etiquetas categóricas opcionales (p. ej., crecimiento, flores, problemas).</li>
+                <li><strong>Datos de avistamientos:</strong> Avistamientos de plantas añadidos a la App, incluyendo fotografías, nombres o notas opcionales y coordenadas GPS (latitud y longitud). Las coordenadas GPS pueden derivarse de los metadatos EXIF de la foto o de la ubicación del dispositivo en el momento en que se crea el avistamiento.</li>
                 <li><strong>Registros de cuidados:</strong> Registros de riego (fechas y notas), mediciones de crecimiento (altura, anchura, notas), registros de fertilización (tipo, NPK, dosis, método, notas), registros de poda (tipo, técnica, notas) y reprogramación o aplazamiento del riego.</li>
                 <li><strong>Estructura de colecciones:</strong> Agrupación de plantas en colecciones y pertenencia de cada planta a una colección como máximo.</li>
                 <li><strong>Ajustes de la App:</strong> Formato de fecha, preferencia de idioma (p. ej., inglés, chino, español), preferencias de notificaciones (activado/desactivado, hora de recordatorio), opciones de ordenación y filtrado por defecto, tipos personalizados de suelo o maceta y preferencia para ocultar plantas archivadas.</li>
@@ -70,6 +71,7 @@
             <p>Los siguientes datos pueden ser obtenidos o derivados por la App únicamente en el dispositivo del Usuario; ninguno de dichos datos se transmite a nosotros:</p>
             <ul>
                 <li><strong>Metadatos de fotos:</strong> Pueden leerse datos EXIF (p. ej., fecha de captura) o la fecha de creación del recurso fotográfico para rellenar automáticamente los campos de fecha. Dicho Tratamiento tiene lugar únicamente en el dispositivo del Usuario.</li>
+                <li><strong>Datos de ubicación:</strong> Cuando el Usuario añade un avistamiento, la App puede leer las coordenadas GPS de los datos EXIF de la foto o, si la ubicación EXIF no está disponible, de la ubicación actual del dispositivo (con el permiso del Usuario). Dichas coordenadas se almacenan únicamente en el dispositivo del Usuario (y, cuando la sincronización con iCloud está activada, en la infraestructura iCloud de Apple). No recibimos ni transmitimos datos de ubicación.</li>
                 <li><strong>Fecha y estación:</strong> Puede utilizarse la fecha y el calendario del dispositivo para determinar la estación actual (para calendarios de riego) y la fecha actual para recordatorios y vistas de calendario. No se nos transmite ningún dato de ubicación o zona horaria.</li>
                 <li><strong>Información del dispositivo:</strong> La App Store de Apple y los servicios del sistema pueden recopilar información (p. ej., versión de iOS, modelo de dispositivo) de acuerdo con las políticas de Apple. No utilizamos análisis ni seguimiento de terceros.</li>
             </ul>
@@ -78,7 +80,7 @@
             <p>No recopilamos, y la App no está diseñada para recopilar:</p>
             <ul>
                 <li>Información de identificación personal (nombre, correo electrónico, dirección física), salvo cuando el Usuario la proporcione voluntariamente al contactarnos (p. ej., consultas de soporte).</li>
-                <li>Datos de ubicación precisos o aproximados.</li>
+                <li>Datos de ubicación precisos o aproximados, excepto las coordenadas GPS registradas voluntariamente por el Usuario a través de la función de avistamientos, que permanecen en el dispositivo del Usuario (y, cuando la sincronización con iCloud está activada, en la infraestructura iCloud de Apple).</li>
                 <li>Información de pago o financiera (la App no procesa pagos).</li>
                 <li>Historial de navegación o actividad fuera de la App.</li>
             </ul>
@@ -88,7 +90,7 @@
             <h3>2.1 Fines</h3>
             <p>Los Datos del Usuario se Tratan únicamente para los siguientes fines:</p>
             <ul>
-                <li>Proporcionar y mantener la funcionalidad principal de la App (gestión de plantas y colecciones, calendario, calendarios de riego, fotografías, registros de cuidados).</li>
+                <li>Proporcionar y mantener la funcionalidad principal de la App (gestión de plantas y colecciones, calendario, calendarios de riego, fotografías, registros de cuidados, y avistamientos con vista de mapa).</li>
                 <li>Habilitar funciones opcionales como recordatorios de riego, vistas de calendario y organización de plantas.</li>
                 <li>Cuando el Usuario ha activado la sincronización con iCloud, permitir el almacenamiento y la sincronización de los Datos del Usuario entre los dispositivos del Usuario a través del servicio iCloud de Apple. Dicho Tratamiento lo realiza Apple conforme al Apple ID del Usuario y a los términos y política de privacidad de Apple; nosotros no realizamos ni controlamos dicho Tratamiento.</li>
             </ul>
@@ -106,7 +108,7 @@
             <h3>3.1 Ubicación de los Datos</h3>
             <p>No almacenamos Datos del Usuario. Todos los Datos del Usuario se mantienen únicamente en una o ambas de las siguientes ubicaciones:</p>
             <ul>
-                <li><strong>Dispositivo del Usuario:</strong> Los Datos del Usuario se almacenan localmente en el dispositivo del Usuario mediante el framework SwiftData. Dichos datos permanecen en el dispositivo y no se transmiten a nosotros.</li>
+                <li><strong>Dispositivo del Usuario:</strong> Los Datos del Usuario—incluidos datos de plantas, fotografías, ubicaciones de avistamientos y registros de cuidados—se almacenan localmente en el dispositivo del Usuario mediante el framework SwiftData. Dichos datos permanecen en el dispositivo y no se transmiten a nosotros.</li>
                 <li><strong>iCloud de Apple (opcional):</strong> Cuando el Usuario ha activado la sincronización con iCloud, la App utiliza la integración CloudKit de SwiftData de modo que una copia de los Datos del Usuario también se almacena en la infraestructura operada por Apple (iCloud), asociada al Apple ID del Usuario. No tenemos acceso a dichos datos.</li>
             </ul>
 

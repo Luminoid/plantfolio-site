@@ -14,7 +14,7 @@ plantfolio-site/
 ├── TRANSLATIONS.md              # Translation sync reference
 ├── resources/
 │   ├── app_icon.png             # App icon (quantized)
-│   ├── screenshots/             # App screenshots (device-framed; quantized 90%)
+│   ├── screenshots/             # App screenshots (quantized 90-100%)
 │   │   └── app-1.png … app-6.png
 │   └── custom-common-plants-source/  # Step images for custom plants guide
 │       └── step1.png … step5.png
@@ -53,8 +53,8 @@ pngquant --quality=90-100 --ext .png --force <files-or-glob>
 ## Content
 
 - **Hero**: App name, tagline, description; lang switcher and App Store badge (alternative white, links to `#download`) top right.
-- **Features**: Plants & Collections, Watering & Calendar, Photos, Home Screen Widgets (small + medium), Reminders, Care Logs, Your Data, Language & Settings
-- **Why Choose**: Smart watering, 800+ plant suggestions, efficient workflow, privacy-first
+- **Features**: Plants & Collections (AI + ML identification), Watering & Calendar, Photos & Care Logs, Home Screen Widgets (Up Next + Calendar + Scan & Identify), Reminders, Sightings & Map, Your Data, Sharing (plant cards, ICS export), Language & Settings
+- **Why Choose**: Works without internet, adapts to your seasons, beyond the garden, one app every device, own your data
 - **Download**: Section `id="download"` with app icon, App Store + Mac App Store badges
 - **Platforms**: iPhone, iPad, Mac (Catalyst)
 - **App Store**: [iOS](https://apps.apple.com/us/app/plantfolio-plus/id6757148663) · [Mac](https://apps.apple.com/us/mac-app/plantfolio-plus/id6757148663)
