@@ -115,9 +115,9 @@
                 <li><strong>Plant and collection data:</strong> Names, scientific names, plant types, descriptions, research notes, light and soil preferences, pot materials, seasonal watering schedules, and start dates.</li>
                 <li><strong>Photographs:</strong> Images of plants or collections added to the App, with optional categorical labels (e.g., growth, flowers, problems).</li>
                 <li><strong>Sighting data:</strong> Plant sightings added to the App, including photographs, optional names or notes, and GPS coordinates (latitude and longitude). GPS coordinates may be derived from photo EXIF metadata or from the device's location at the time the sighting is created.</li>
-                <li><strong>Care records:</strong> Watering logs (dates and notes), growth measurements (height, width, notes), fertilization logs (type, NPK, dosage, method, notes), pruning logs (type, technique, notes), and watering rescheduling or postponement.</li>
+                <li><strong>Care records:</strong> Watering logs (dates, times, intensity, and notes), growth measurements (height, width, notes), fertilization logs (type, NPK, dosage, method, notes), pruning logs (type, technique, notes), plant status check reports (AI-generated health assessments and conversation history), and watering rescheduling or postponement.</li>
                 <li><strong>Collection structure:</strong> Grouping of plants into collections and membership of each plant in at most one collection.</li>
-                <li><strong>App settings:</strong> Date format, language preference (e.g., English, Chinese, Spanish), notification preferences (enabled/disabled, reminder time), default sort and filter options, custom soil or pot types, and preference to hide archived plants.</li>
+                <li><strong>App settings:</strong> Date format, language preference (e.g., English, Chinese, Spanish), notification preferences (enabled/disabled, reminder time), default sort and filter options, custom soil or pot types, preference to hide archived plants, and selected Gemini AI model preference.</li>
             </ul>
 
             <h3>1.2 Data Obtained Automatically by the App</h3>
@@ -143,8 +143,8 @@
             <h3>2.1 Purposes</h3>
             <p>User Data is Processed solely for the following purposes:</p>
             <ul>
-                <li>To provide and maintain the core functionality of the App (plant and collection management, calendar, watering schedules, photographs, care logs, and sightings with map view).</li>
-                <li>To enable optional features such as watering reminders, calendar views, and plant organization.</li>
+                <li>To provide and maintain the core functionality of the App (plant and collection management, calendar, watering schedules, photographs, care logs, plant status checks, and sightings with map view).</li>
+                <li>To enable optional features such as watering reminders, calendar views, plant organization, and AI-powered plant health assessments via Google's Gemini API (when the User initiates a status check).</li>
                 <li>Where the User has enabled iCloud sync, to permit storage and synchronization of User Data across the User’s devices via Apple’s iCloud service. Such Processing is performed by Apple pursuant to the User’s Apple ID and Apple’s terms and privacy policy; we do not perform or control such Processing.</li>
             </ul>
             <p>Where the User contacts us for support (e.g., by email), we Process only the information contained in or attached to that communication for the purpose of responding to the inquiry.</p>
@@ -194,10 +194,30 @@
             </ul>
             <p>Apple’s Privacy Policy is available at: <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/privacy/</a>. Users are encouraged to review it.</p>
 
-            <h3>4.2 Export and Import</h3>
+            <h3>4.2 Google Gemini API</h3>
+            <p>The App offers optional AI-powered features—plant identification, care auto-fill, plant info update, and plant status checks—that use Google's Gemini API. When the User initiates one of these features:</p>
+            <ul>
+                <li><strong>Data sent to Google:</strong> Depending on the feature used, the following data may be included in the request to Google's Gemini API:
+                    <ul>
+                        <li>Plant photos (1–4 images, compressed JPEG)</li>
+                        <li>Plant name and scientific name (as contextual hints)</li>
+                        <li>Pot material, soil layer composition, and location/climate description (text only, not GPS coordinates)</li>
+                        <li>Recent care history (last 3 entries each of watering, fertilization, pruning, and growth logs)</li>
+                        <li>User notes and previous AI notes (for status checks)</li>
+                        <li>Conversation history from follow-up questions (for multi-turn status checks)</li>
+                        <li>Photo dates and the User's language preference</li>
+                    </ul>
+                    No GPS coordinates, no account information, and no data from other plants or features are sent.
+                </li>
+                <li><strong>Processing by Google:</strong> Google processes the request and returns a response (identification result, care suggestions, or health assessment). Google's processing is subject to <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Google's Gemini API Terms of Service</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</li>
+                <li><strong>Results stored locally:</strong> The AI-generated response (identification notes, status check reports, conversation history) is stored on the User's device and, where iCloud sync is enabled, on Apple's iCloud infrastructure. We do not store or have access to these results.</li>
+                <li><strong>User-initiated only:</strong> No data is sent to Google unless the User explicitly triggers an identification, update, or status check action. The User's Gemini API key is stored locally in the App's settings on the User's device.</li>
+            </ul>
+
+            <h3>4.3 Export and Import</h3>
             <p>The App permits the User to export User Data (plants, collections, photos, watering and care logs, settings) to a ZIP file on the User’s device or to the Files app, and to import from a previously exported ZIP (replace all or merge). Export and import operations are performed solely on the User’s device or in locations selected by the User. We do not receive, store, or Process exported or imported data.</p>
 
-            <h3>4.3 External Links and On-Device Reference Data</h3>
+            <h3>4.4 External Links and On-Device Reference Data</h3>
             <p>The App may contain links to third-party resources (e.g., Wikipedia) for plant care information. Accessing such links takes the User outside the App; the privacy practices and terms of those third parties apply. The App also includes built-in reference data (e.g., plant types and care information) stored locally on the device; such data is not used to identify the User.</p>
 
             <h2>5. Disclosure of Personal Data</h2>

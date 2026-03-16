@@ -62,9 +62,9 @@
                 <li><strong>Datos de plantas y colecciones:</strong> Nombres, nombres científicos, tipos de plantas, descripciones, notas de investigación, preferencias de luz y suelo, materiales de maceta, calendarios de riego estacionales y fechas de inicio.</li>
                 <li><strong>Fotografías:</strong> Imágenes de plantas o colecciones añadidas a la App, con etiquetas categóricas opcionales (p. ej., crecimiento, flores, problemas).</li>
                 <li><strong>Datos de avistamientos:</strong> Avistamientos de plantas añadidos a la App, incluyendo fotografías, nombres o notas opcionales y coordenadas GPS (latitud y longitud). Las coordenadas GPS pueden derivarse de los metadatos EXIF de la foto o de la ubicación del dispositivo en el momento en que se crea el avistamiento.</li>
-                <li><strong>Registros de cuidados:</strong> Registros de riego (fechas y notas), mediciones de crecimiento (altura, anchura, notas), registros de fertilización (tipo, NPK, dosis, método, notas), registros de poda (tipo, técnica, notas) y reprogramación o aplazamiento del riego.</li>
+                <li><strong>Registros de cuidados:</strong> Registros de riego (fechas, horas, intensidad y notas), mediciones de crecimiento (altura, anchura, notas), registros de fertilización (tipo, NPK, dosis, método, notas), registros de poda (tipo, técnica, notas), informes de revisión de estado de plantas (evaluaciones de salud generadas por IA e historial de conversación) y reprogramación o aplazamiento del riego.</li>
                 <li><strong>Estructura de colecciones:</strong> Agrupación de plantas en colecciones y pertenencia de cada planta a una colección como máximo.</li>
-                <li><strong>Ajustes de la App:</strong> Formato de fecha, preferencia de idioma (p. ej., inglés, chino, español), preferencias de notificaciones (activado/desactivado, hora de recordatorio), opciones de ordenación y filtrado por defecto, tipos personalizados de suelo o maceta y preferencia para ocultar plantas archivadas.</li>
+                <li><strong>Ajustes de la App:</strong> Formato de fecha, preferencia de idioma (p. ej., inglés, chino, español), preferencias de notificaciones (activado/desactivado, hora de recordatorio), opciones de ordenación y filtrado por defecto, tipos personalizados de suelo o maceta, preferencia para ocultar plantas archivadas y preferencia de modelo Gemini AI seleccionado.</li>
             </ul>
 
             <h3>1.2 Datos Obtenidos Automáticamente por la App</h3>
@@ -90,8 +90,8 @@
             <h3>2.1 Fines</h3>
             <p>Los Datos del Usuario se Tratan únicamente para los siguientes fines:</p>
             <ul>
-                <li>Proporcionar y mantener la funcionalidad principal de la App (gestión de plantas y colecciones, calendario, calendarios de riego, fotografías, registros de cuidados, y avistamientos con vista de mapa).</li>
-                <li>Habilitar funciones opcionales como recordatorios de riego, vistas de calendario y organización de plantas.</li>
+                <li>Proporcionar y mantener la funcionalidad principal de la App (gestión de plantas y colecciones, calendario, calendarios de riego, fotografías, registros de cuidados, revisiones de estado de plantas, y avistamientos con vista de mapa).</li>
+                <li>Habilitar funciones opcionales como recordatorios de riego, vistas de calendario, organización de plantas y evaluaciones de salud de plantas con IA a través de la API Gemini de Google (cuando el Usuario inicia una revisión de estado).</li>
                 <li>Cuando el Usuario ha activado la sincronización con iCloud, permitir el almacenamiento y la sincronización de los Datos del Usuario entre los dispositivos del Usuario a través del servicio iCloud de Apple. Dicho Tratamiento lo realiza Apple conforme al Apple ID del Usuario y a los términos y política de privacidad de Apple; nosotros no realizamos ni controlamos dicho Tratamiento.</li>
             </ul>
             <p>Cuando el Usuario nos contacta para soporte (p. ej., por correo electrónico), solo Tratamos la información contenida o adjunta en esa comunicación con el fin de responder a la consulta.</p>
@@ -141,10 +141,30 @@
             </ul>
             <p>La Política de Privacidad de Apple está disponible en: <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/privacy/</a>. Se anima a los Usuarios a consultarla.</p>
 
-            <h3>4.2 Exportación e Importación</h3>
+            <h3>4.2 API Google Gemini</h3>
+            <p>La App ofrece funciones opcionales con IA—identificación de plantas, auto-completado de cuidados, actualización de información de plantas y revisiones de estado—que utilizan la API Gemini de Google. Cuando el Usuario inicia una de estas funciones:</p>
+            <ul>
+                <li><strong>Datos enviados a Google:</strong> Según la función utilizada, los siguientes datos pueden incluirse en la solicitud a la API Gemini de Google:
+                    <ul>
+                        <li>Fotos de plantas (1–4 imágenes, JPEG comprimido)</li>
+                        <li>Nombre de la planta y nombre científico (como pistas contextuales)</li>
+                        <li>Material de maceta, composición del sustrato y descripción de ubicación/clima (solo texto, no coordenadas GPS)</li>
+                        <li>Historial de cuidados reciente (últimas 3 entradas de riego, fertilización, poda y crecimiento)</li>
+                        <li>Notas del usuario y notas previas de IA (para revisiones de estado)</li>
+                        <li>Historial de conversación de preguntas de seguimiento (para revisiones de estado multi-turno)</li>
+                        <li>Fechas de fotos y preferencia de idioma del Usuario</li>
+                    </ul>
+                    No se envían coordenadas GPS, información de cuenta ni datos de otras plantas o funciones.
+                </li>
+                <li><strong>Procesamiento por Google:</strong> Google procesa la solicitud y devuelve una respuesta (resultado de identificación, sugerencias de cuidados o evaluación de salud). El procesamiento de Google está sujeto a los <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Términos de Servicio de la API Gemini de Google</a> y a la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad de Google</a>.</li>
+                <li><strong>Resultados almacenados localmente:</strong> La respuesta generada por IA (notas de identificación, informes de revisión de estado, historial de conversación) se almacena en el dispositivo del Usuario y, cuando la sincronización con iCloud está activada, en la infraestructura iCloud de Apple. No almacenamos ni tenemos acceso a estos resultados.</li>
+                <li><strong>Solo por iniciativa del Usuario:</strong> No se envían datos a Google a menos que el Usuario active explícitamente una acción de identificación, actualización o revisión de estado. La clave de API Gemini del Usuario se almacena localmente en los ajustes de la App en el dispositivo del Usuario.</li>
+            </ul>
+
+            <h3>4.3 Exportación e Importación</h3>
             <p>La App permite al Usuario exportar los Datos del Usuario (plantas, colecciones, fotos, registros de riego y cuidados, ajustes) a un archivo ZIP en el dispositivo del Usuario o a la app Archivos, e importar desde un ZIP previamente exportado (reemplazar todo o fusionar). Las operaciones de exportación e importación se realizan únicamente en el dispositivo del Usuario o en ubicaciones seleccionadas por el Usuario. No recibimos, almacenamos ni Tratamos datos exportados o importados.</p>
 
-            <h3>4.3 Enlaces Externos y Datos de Referencia en el Dispositivo</h3>
+            <h3>4.4 Enlaces Externos y Datos de Referencia en el Dispositivo</h3>
             <p>La App puede contener enlaces a recursos de terceros (p. ej., Wikipedia) para información sobre cuidados de plantas. Acceder a dichos enlaces lleva al Usuario fuera de la App; las prácticas de privacidad y los términos de esos terceros son aplicables. La App también incluye datos de referencia integrados (p. ej., tipos de plantas e información de cuidados) almacenados localmente en el dispositivo; dichos datos no se utilizan para identificar al Usuario.</p>
 
             <h2>5. Divulgación de Datos Personales</h2>
