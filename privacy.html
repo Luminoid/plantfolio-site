@@ -199,13 +199,16 @@
             <ul>
                 <li><strong>Data sent to Google:</strong> Depending on the feature used, the following data may be included in the request to Google's Gemini API:
                     <ul>
-                        <li>Plant photos (1–4 images, compressed JPEG)</li>
+                        <li>Plant photos (1–6 images, compressed JPEG)</li>
                         <li>Plant name and scientific name (as contextual hints)</li>
+                        <li>Collection member plant names (when identifying or assessing multi-plant collections)</li>
                         <li>Pot material, soil layer composition, and location/climate description (text only, not GPS coordinates)</li>
-                        <li>Recent care history (last 3 entries each of watering, fertilization, pruning, and growth logs)</li>
-                        <li>User notes and previous AI notes (for status checks)</li>
-                        <li>Conversation history from follow-up questions (for multi-turn status checks)</li>
-                        <li>Photo dates and the User's language preference</li>
+                        <li>Species preferences stored from identification (light, humidity, temperature range, drainage, soil pH, watering method) and growing conditions (hemisphere)</li>
+                        <li>Current seasonal watering intervals (spring, summer, fall, winter)</li>
+                        <li>Recent care history: watering logs (latest 20 entries with date, action, and intensity), fertilization logs (latest 3 entries with type, NPK, and method), pruning logs (latest 3 entries with type), and growth measurements (latest 3 entries with height and width, for status checks)</li>
+                        <li>User notes and previous AI notes (for status checks and plant updates)</li>
+                        <li>Conversation history from follow-up questions (for multi-turn status checks; not persisted after the session ends)</li>
+                        <li>Photo dates, photo history metadata (count and date range of stored photos), and the User's language preference</li>
                     </ul>
                     No GPS coordinates, no account information, and no data from other plants or features are sent.
                 </li>

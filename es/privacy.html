@@ -146,13 +146,16 @@
             <ul>
                 <li><strong>Datos enviados a Google:</strong> Según la función utilizada, los siguientes datos pueden incluirse en la solicitud a la API Gemini de Google:
                     <ul>
-                        <li>Fotos de plantas (1–4 imágenes, JPEG comprimido)</li>
+                        <li>Fotos de plantas (1–6 imágenes, JPEG comprimido)</li>
                         <li>Nombre de la planta y nombre científico (como pistas contextuales)</li>
+                        <li>Nombres de plantas miembro de la colección (al identificar o evaluar colecciones de múltiples plantas)</li>
                         <li>Material de maceta, composición del sustrato y descripción de ubicación/clima (solo texto, no coordenadas GPS)</li>
-                        <li>Historial de cuidados reciente (últimas 3 entradas de riego, fertilización, poda y crecimiento)</li>
-                        <li>Notas del usuario y notas previas de IA (para revisiones de estado)</li>
-                        <li>Historial de conversación de preguntas de seguimiento (para revisiones de estado multi-turno)</li>
-                        <li>Fechas de fotos y preferencia de idioma del Usuario</li>
+                        <li>Preferencias de especie almacenadas desde la identificación (luz, humedad, rango de temperatura, drenaje, pH del suelo, método de riego) y condiciones de cultivo (hemisferio)</li>
+                        <li>Intervalos de riego estacionales actuales (primavera, verano, otoño, invierno)</li>
+                        <li>Historial de cuidados reciente: registros de riego (últimas 20 entradas con fecha, acción e intensidad), registros de fertilización (últimas 3 entradas con tipo, NPK y método), registros de poda (últimas 3 entradas con tipo) y mediciones de crecimiento (últimas 3 entradas con altura y anchura, para revisiones de estado)</li>
+                        <li>Notas del usuario y notas previas de IA (para revisiones de estado y actualizaciones de plantas)</li>
+                        <li>Historial de conversación de preguntas de seguimiento (para revisiones de estado multi-turno; no se conserva después de finalizar la sesión)</li>
+                        <li>Fechas de fotos, metadatos del historial fotográfico (cantidad y rango de fechas de fotos almacenadas) y preferencia de idioma del Usuario</li>
                     </ul>
                     No se envían coordenadas GPS, información de cuenta ni datos de otras plantas o funciones.
                 </li>
