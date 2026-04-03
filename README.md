@@ -76,7 +76,7 @@ pngquant --quality=90-100 --ext .png --force <files-or-glob>
 - **Support**: Contact email, system requirements
 - **Footer**: Copyright, privacy policy link
 - **Platforms**: iPhone, iPad, Mac (Catalyst)
-- **App Store**: [iOS](https://apps.apple.com/us/app/plantfolio-plus/id6757148663) · [Mac](https://apps.apple.com/us/mac-app/plantfolio-plus/id6757148663)
+- **App Store**: [iOS](https://apps.apple.com/us/app/plantfolio-plus/id6757148663) · [Mac](https://apps.apple.com/us/app/plantfolio-plus/id6757148663)
 
 ## Fonts
 
