@@ -81,6 +81,7 @@ body {
     line-height: 0;
     background: none;
     padding: 0;
+    text-decoration: none;
 }
 
 .hero-badge-img {
@@ -394,6 +395,7 @@ h2 {
 .app-badge-link {
     display: block;
     line-height: 0;
+    text-decoration: none;
 }
 
 .app-badge {
