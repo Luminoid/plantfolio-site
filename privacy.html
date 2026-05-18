@@ -93,7 +93,7 @@
     <main>
         <div class="privacy-content">
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: March 2026</p>
+            <p class="last-updated">Last Updated: May 2026</p>
 
             <h2>Scope and Acceptance</h2>
             <p>This Privacy Policy ("Policy") governs the collection, use, disclosure, and retention of information in connection with the mobile application "Plantfolio Plus" (the "App"), operated by Chunhou Li ("we," "us," or "our"). By installing, accessing, or using the App, you ("User" or "you") acknowledge that you have read, understood, and agree to be bound by this Policy. If you do not agree to this Policy, you must not use the App.</p>
@@ -128,7 +128,7 @@
             <p>The following data may be obtained or derived by the App on the User’s device only; none of such data is transmitted to us:</p>
             <ul>
                 <li><strong>Photo metadata:</strong> EXIF data (e.g., date taken) or the creation date of the photo asset may be read to populate date fields automatically. Such Processing occurs solely on the User’s device.</li>
-                <li><strong>Location data:</strong> When the User adds a sighting, the App may read GPS coordinates from the photo’s EXIF data or, if EXIF location is unavailable, from the device’s current location (with the User’s permission). Such coordinates are stored solely on the User’s device (and, where iCloud sync is enabled, on Apple’s iCloud infrastructure). We do not receive or transmit location data.</li>
+                <li><strong>Location data:</strong> The App may read GPS coordinates from the device’s current location (with the User’s permission) in two contexts: (i) when the User adds a sighting, GPS coordinates may be derived from the photo’s EXIF data or, if EXIF location is unavailable, from the device’s current location; and (ii) when the User sets the plant location in Settings using the current-location option (the plant location powers the optional calendar weather overlay). Coordinates are stored solely on the User’s device (and, where iCloud sync is enabled, on Apple’s iCloud infrastructure). We do not receive location data on systems under our control; the only off-device transmission is the coarse plant location coordinates (rounded to two decimal places, approximately 1 km) sent to Apple’s WeatherKit service when the User has enabled the optional calendar weather overlay, used solely to retrieve forecasts and historical conditions (see Section 4.1).</li>
                 <li><strong>Date and season:</strong> The device’s date and calendar may be used to determine the current season (for watering schedules) and the current date for reminders and calendar views. No location or timezone data is transmitted to us.</li>
                 <li><strong>Device information:</strong> Apple’s App Store and system services may collect information (e.g., iOS version, device model) in accordance with Apple’s policies. We do not use third-party analytics or tracking.</li>
             </ul>
@@ -137,7 +137,7 @@
             <p>We do not collect, and the App is not designed to collect:</p>
             <ul>
                 <li>Personal identification information (name, email, physical address) except where voluntarily provided by the User when contacting us (e.g., support inquiries).</li>
-                <li>Precise or approximate location data, except for GPS coordinates voluntarily recorded by the User via the sightings feature, which remain on the User's device (and, where iCloud sync is enabled, on Apple's iCloud infrastructure).</li>
+                <li>Precise or approximate location data, except for: (a) GPS coordinates voluntarily recorded by the User via the sightings feature, which remain on the User's device (and, where iCloud sync is enabled, on Apple's iCloud infrastructure); and (b) the single plant location chosen by the User in Settings, plus the coarse coordinates (rounded to approximately 1 km) transmitted to Apple's WeatherKit service when the User has enabled the optional calendar weather overlay.</li>
                 <li>Payment or financial information (the App does not process payments).</li>
                 <li>Browsing history or activity outside the App.</li>
             </ul>
@@ -148,7 +148,7 @@
             <p>User Data is Processed solely for the following purposes:</p>
             <ul>
                 <li>To provide and maintain the core functionality of the App (plant and collection management, calendar, watering schedules, photographs, care logs, plant status checks, and sightings with map view).</li>
-                <li>To enable optional features such as watering reminders, calendar views, plant organization, and AI-powered plant health assessments via Google's Gemini API (when the User initiates a status check).</li>
+                <li>To enable optional features such as watering reminders, calendar views, plant organization, AI-powered plant identification, care auto-fill, plant info update, and plant status checks via Google's Gemini API (each user-initiated), and the calendar weather overlay via Apple's WeatherKit (when enabled by the User).</li>
                 <li>Where the User has enabled iCloud sync, to permit storage and synchronization of User Data across the User’s devices via Apple’s iCloud service. Such Processing is performed by Apple pursuant to the User’s Apple ID and Apple’s terms and privacy policy; we do not perform or control such Processing.</li>
             </ul>
             <p>Where the User contacts us for support (e.g., by email), we Process only the information contained in or attached to that communication for the purpose of responding to the inquiry.</p>
@@ -165,7 +165,7 @@
             <h3>3.1 Location of Data</h3>
             <p>We do not store User Data. All User Data is held in one or both of the following locations only:</p>
             <ul>
-                <li><strong>User’s device:</strong> User Data—including plant data, photographs, sighting locations, and care records—is stored locally on the User’s device using the SwiftData framework. Such data remains on the device and is not transmitted to us.</li>
+                <li><strong>User’s device:</strong> User Data—including plant data, photographs, sighting locations, care records, plant status check reports, and cached weather records (when the calendar weather overlay is enabled)—is stored locally on the User’s device using the SwiftData framework. Such data remains on the device and is not transmitted to us.</li>
                 <li><strong>Apple iCloud (optional):</strong> Where the User has enabled iCloud sync, the App uses SwiftData’s CloudKit integration such that a copy of User Data is also stored on infrastructure operated by Apple (iCloud), associated with the User’s Apple ID. We do not have access to such data.</li>
             </ul>
 
@@ -195,6 +195,7 @@
                 <li><strong>App Store:</strong> Distribution and updates of the App. Apple may collect information in accordance with its Privacy Policy.</li>
                 <li><strong>iCloud:</strong> Optional synchronization of User Data. When enabled, User Data is stored on the User’s device and on Apple’s iCloud infrastructure; we do not store such data.</li>
                 <li><strong>Push Notifications:</strong> Delivery of watering reminders. Notification content is Processed by Apple’s notification services.</li>
+                <li><strong>WeatherKit (optional):</strong> When the User opts in to the calendar weather overlay and sets the plant location in Settings, the App queries Apple’s WeatherKit service for daily forecasts and historical conditions. Coordinates sent to WeatherKit are rounded to two decimal places (approximately 1 km) and are not associated with the User’s identity. WeatherKit responses are cached on the User’s device and, where iCloud sync is enabled, on Apple’s iCloud infrastructure. The overlay is disabled by default and can be turned off at any time in the App’s settings. We do not receive or store weather queries or responses.</li>
             </ul>
             <p>Apple’s Privacy Policy is available at: <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/privacy/</a>. Users are encouraged to review it.</p>
 
@@ -237,7 +238,8 @@
 
             <p>We do not sell, rent, or trade Personal Data. We do not disclose User Data to third parties, except:</p>
             <ul>
-                <li><strong>With the User’s consent:</strong> When the User enables iCloud sync, User Data is stored on the User’s device and on Apple’s iCloud infrastructure pursuant to the User’s choice; we do not store or access such data.</li>
+                <li><strong>With the User’s consent (iCloud sync):</strong> When the User enables iCloud sync, User Data is stored on the User’s device and on Apple’s iCloud infrastructure pursuant to the User’s choice; we do not store or access such data.</li>
+                <li><strong>With the User’s consent (opt-in third-party features):</strong> When the User initiates Gemini AI features (identification, care auto-fill, plant info update, status check), the data described in Section 4.2 is transmitted to Google. When the User enables the optional calendar weather overlay, the coarse plant location coordinates described in Section 4.1 are transmitted to Apple’s WeatherKit. No transmission occurs without the User’s opt-in or action.</li>
                 <li><strong>Legal obligation:</strong> Where we are required by applicable law or by a valid legal process (e.g., court order, subpoena) to disclose information. Because we do not store User Data, we would have no such data to disclose unless the User has voluntarily provided it to us (e.g., in a support communication).</li>
             </ul>
 

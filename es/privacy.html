@@ -40,7 +40,7 @@
     <main>
         <div class="privacy-content">
             <h1>Política de Privacidad</h1>
-            <p class="last-updated">Última actualización: Marzo de 2026</p>
+            <p class="last-updated">Última actualización: Mayo de 2026</p>
 
             <h2>Ámbito y Aceptación</h2>
             <p>Esta Política de Privacidad («Política») regula la recopilación, uso, divulgación y conservación de información en relación con la aplicación móvil «Plantfolio Plantas» (la «App»), operada por Chunhou Li («nosotros», «nuestro» o «nos»). Al instalar, acceder o utilizar la App, usted («Usuario» o «usted») reconoce haber leído, comprendido y aceptado quedar obligado por esta Política. Si no está de acuerdo con esta Política, no debe utilizar la App.</p>
@@ -75,7 +75,7 @@
             <p>Los siguientes datos pueden ser obtenidos o derivados por la App únicamente en el dispositivo del Usuario; ninguno de dichos datos se transmite a nosotros:</p>
             <ul>
                 <li><strong>Metadatos de fotos:</strong> Pueden leerse datos EXIF (p. ej., fecha de captura) o la fecha de creación del recurso fotográfico para rellenar automáticamente los campos de fecha. Dicho Tratamiento tiene lugar únicamente en el dispositivo del Usuario.</li>
-                <li><strong>Datos de ubicación:</strong> Cuando el Usuario añade un avistamiento, la App puede leer las coordenadas GPS de los datos EXIF de la foto o, si la ubicación EXIF no está disponible, de la ubicación actual del dispositivo (con el permiso del Usuario). Dichas coordenadas se almacenan únicamente en el dispositivo del Usuario (y, cuando la sincronización con iCloud está activada, en la infraestructura iCloud de Apple). No recibimos ni transmitimos datos de ubicación.</li>
+                <li><strong>Datos de ubicación:</strong> La App puede leer las coordenadas GPS de la ubicación actual del dispositivo (con el permiso del Usuario) en dos contextos: (i) cuando el Usuario añade un avistamiento, las coordenadas GPS pueden derivarse de los datos EXIF de la foto o, si la ubicación EXIF no está disponible, de la ubicación actual del dispositivo; y (ii) cuando el Usuario establece la ubicación de la planta en Ajustes utilizando la opción de ubicación actual (la ubicación de la planta alimenta la superposición meteorológica opcional del calendario). Las coordenadas se almacenan únicamente en el dispositivo del Usuario (y, cuando la sincronización con iCloud está activada, en la infraestructura iCloud de Apple). No recibimos datos de ubicación en sistemas bajo nuestro control; la única transmisión fuera del dispositivo son las coordenadas aproximadas de la ubicación de la planta (redondeadas a dos decimales, aproximadamente 1 km) enviadas al servicio WeatherKit de Apple cuando el Usuario ha activado la superposición meteorológica opcional del calendario, utilizadas únicamente para obtener pronósticos y condiciones históricas (véase la Sección 4.1).</li>
                 <li><strong>Fecha y estación:</strong> Puede utilizarse la fecha y el calendario del dispositivo para determinar la estación actual (para calendarios de riego) y la fecha actual para recordatorios y vistas de calendario. No se nos transmite ningún dato de ubicación o zona horaria.</li>
                 <li><strong>Información del dispositivo:</strong> La App Store de Apple y los servicios del sistema pueden recopilar información (p. ej., versión de iOS, modelo de dispositivo) de acuerdo con las políticas de Apple. No utilizamos análisis ni seguimiento de terceros.</li>
             </ul>
@@ -84,7 +84,7 @@
             <p>No recopilamos, y la App no está diseñada para recopilar:</p>
             <ul>
                 <li>Información de identificación personal (nombre, correo electrónico, dirección física), salvo cuando el Usuario la proporcione voluntariamente al contactarnos (p. ej., consultas de soporte).</li>
-                <li>Datos de ubicación precisos o aproximados, excepto las coordenadas GPS registradas voluntariamente por el Usuario a través de la función de avistamientos, que permanecen en el dispositivo del Usuario (y, cuando la sincronización con iCloud está activada, en la infraestructura iCloud de Apple).</li>
+                <li>Datos de ubicación precisos o aproximados, salvo: (a) las coordenadas GPS registradas voluntariamente por el Usuario a través de la función de avistamientos, que permanecen en el dispositivo del Usuario (y, cuando la sincronización con iCloud está activada, en la infraestructura iCloud de Apple); y (b) la única ubicación de planta elegida por el Usuario en Ajustes, junto con las coordenadas aproximadas (redondeadas a aproximadamente 1 km) que se transmiten al servicio WeatherKit de Apple cuando el Usuario ha activado la superposición meteorológica opcional del calendario.</li>
                 <li>Información de pago o financiera (la App no procesa pagos).</li>
                 <li>Historial de navegación o actividad fuera de la App.</li>
             </ul>
@@ -95,7 +95,7 @@
             <p>Los Datos del Usuario se Tratan únicamente para los siguientes fines:</p>
             <ul>
                 <li>Proporcionar y mantener la funcionalidad principal de la App (gestión de plantas y colecciones, calendario, calendarios de riego, fotografías, registros de cuidados, revisiones de estado de plantas, y avistamientos con vista de mapa).</li>
-                <li>Habilitar funciones opcionales como recordatorios de riego, vistas de calendario, organización de plantas y evaluaciones de salud de plantas con IA a través de la API Gemini de Google (cuando el Usuario inicia una revisión de estado).</li>
+                <li>Habilitar funciones opcionales como recordatorios de riego, vistas de calendario, organización de plantas, identificación de plantas con IA, auto-completado de cuidados, actualización de información de plantas y revisiones de estado a través de la API Gemini de Google (cada una iniciada por el Usuario), y la superposición meteorológica del calendario a través de WeatherKit de Apple (cuando el Usuario la activa).</li>
                 <li>Cuando el Usuario ha activado la sincronización con iCloud, permitir el almacenamiento y la sincronización de los Datos del Usuario entre los dispositivos del Usuario a través del servicio iCloud de Apple. Dicho Tratamiento lo realiza Apple conforme al Apple ID del Usuario y a los términos y política de privacidad de Apple; nosotros no realizamos ni controlamos dicho Tratamiento.</li>
             </ul>
             <p>Cuando el Usuario nos contacta para soporte (p. ej., por correo electrónico), solo Tratamos la información contenida o adjunta en esa comunicación con el fin de responder a la consulta.</p>
@@ -112,7 +112,7 @@
             <h3>3.1 Ubicación de los Datos</h3>
             <p>No almacenamos Datos del Usuario. Todos los Datos del Usuario se mantienen únicamente en una o ambas de las siguientes ubicaciones:</p>
             <ul>
-                <li><strong>Dispositivo del Usuario:</strong> Los Datos del Usuario—incluidos datos de plantas, fotografías, ubicaciones de avistamientos y registros de cuidados—se almacenan localmente en el dispositivo del Usuario mediante el framework SwiftData. Dichos datos permanecen en el dispositivo y no se transmiten a nosotros.</li>
+                <li><strong>Dispositivo del Usuario:</strong> Los Datos del Usuario—incluidos datos de plantas, fotografías, ubicaciones de avistamientos, registros de cuidados, informes de revisión de estado de plantas y registros meteorológicos en caché (cuando la superposición meteorológica del calendario está activada)—se almacenan localmente en el dispositivo del Usuario mediante el framework SwiftData. Dichos datos permanecen en el dispositivo y no se transmiten a nosotros.</li>
                 <li><strong>iCloud de Apple (opcional):</strong> Cuando el Usuario ha activado la sincronización con iCloud, la App utiliza la integración CloudKit de SwiftData de modo que una copia de los Datos del Usuario también se almacena en la infraestructura operada por Apple (iCloud), asociada al Apple ID del Usuario. No tenemos acceso a dichos datos.</li>
             </ul>
 
@@ -142,6 +142,7 @@
                 <li><strong>App Store:</strong> Distribución y actualizaciones de la App. Apple puede recopilar información de acuerdo con su Política de Privacidad.</li>
                 <li><strong>iCloud:</strong> Sincronización opcional de los Datos del Usuario. Cuando está activada, los Datos del Usuario se almacenan en el dispositivo del Usuario y en la infraestructura iCloud de Apple; nosotros no almacenamos dichos datos.</li>
                 <li><strong>Notificaciones push:</strong> Entrega de recordatorios de riego. El contenido de las notificaciones es Tratado por los servicios de notificación de Apple.</li>
+                <li><strong>WeatherKit (opcional):</strong> Cuando el Usuario activa la superposición meteorológica del calendario y establece la ubicación de la planta en Ajustes, la App consulta el servicio WeatherKit de Apple para obtener pronósticos diarios y condiciones históricas. Las coordenadas enviadas a WeatherKit se redondean a dos decimales (aproximadamente 1 km) y no están asociadas a la identidad del Usuario. Las respuestas de WeatherKit se almacenan en caché en el dispositivo del Usuario y, cuando la sincronización con iCloud está activada, en la infraestructura iCloud de Apple. La superposición está desactivada por defecto y puede desactivarse en cualquier momento en los ajustes de la App. No recibimos ni almacenamos consultas ni respuestas meteorológicas.</li>
             </ul>
             <p>La Política de Privacidad de Apple está disponible en: <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/privacy/</a>. Se anima a los Usuarios a consultarla.</p>
 
@@ -184,7 +185,8 @@
 
             <p>No vendemos, alquilamos ni comerciamos con Datos Personales. No divulgamos Datos del Usuario a terceros, salvo:</p>
             <ul>
-                <li><strong>Con el consentimiento del Usuario:</strong> Cuando el Usuario activa la sincronización con iCloud, los Datos del Usuario se almacenan en el dispositivo del Usuario y en la infraestructura iCloud de Apple conforme a la elección del Usuario; nosotros no almacenamos ni accedemos a dichos datos.</li>
+                <li><strong>Con el consentimiento del Usuario (sincronización con iCloud):</strong> Cuando el Usuario activa la sincronización con iCloud, los Datos del Usuario se almacenan en el dispositivo del Usuario y en la infraestructura iCloud de Apple conforme a la elección del Usuario; nosotros no almacenamos ni accedemos a dichos datos.</li>
+                <li><strong>Con el consentimiento del Usuario (funciones opcionales de terceros):</strong> Cuando el Usuario inicia las funciones de IA Gemini (identificación, auto-completado de cuidados, actualización de información de plantas, revisión de estado), los datos descritos en la Sección 4.2 se transmiten a Google. Cuando el Usuario activa la superposición meteorológica opcional del calendario, las coordenadas aproximadas de la ubicación de la planta descritas en la Sección 4.1 se transmiten al servicio WeatherKit de Apple. No se produce ninguna transmisión sin la activación o acción del Usuario.</li>
                 <li><strong>Obligación legal:</strong> Cuando la ley aplicable o un proceso legal válido (p. ej., orden judicial, citación) nos exija divulgar información. Dado que no almacenamos Datos del Usuario, no tendríamos dichos datos que divulgar a menos que el Usuario nos los haya proporcionado voluntariamente (p. ej., en una comunicación de soporte).</li>
             </ul>
 
