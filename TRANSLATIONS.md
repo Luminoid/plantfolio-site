@@ -25,15 +25,15 @@ Keep EN, ES, and ZH content aligned. When updating one locale, update all three.
 
 ## Feature cards (9 total)
 
-Same structure: Plants & Collections, Watering & Calendar, Photos & Care Logs, Sightings & Map, Home Screen Widgets, Reminders, Sharing, Your Data, Language & Settings.
+Same structure in all locales, in this order: Plants & Collections, Watering & Calendar, Care Journal & Photos, Sightings & Map, Reminders, Home Screen Widgets, Sharing, Language & Settings, Your Data & Privacy.
 
-## Highlight items (5 total)
+## Highlight items (3 total)
+
+Trimmed to differentiators not already covered by the feature cards.
 
 1. Works without internet / Funciona sin internet / 离线也能用
-2. Adapts to your seasons / Se adapta a tus estaciones / 随季节自动调整
-3. Beyond the garden / Más allá del jardín / 不止于花园
-4. One app, every device / Una app, todos los dispositivos / 一个应用，所有设备
-5. Own your data / Tus datos, tu control / 数据由你掌控
+2. One app, every device / Una app, todos los dispositivos / 一个应用，所有设备
+3. Private by design / Privada por diseño / 隐私至上
 
 ## Sync checklist
 
