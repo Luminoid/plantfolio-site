@@ -93,7 +93,7 @@
     <main>
         <div class="privacy-content">
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: May 2026</p>
+            <p class="last-updated">Last Updated: July 2026</p>
 
             <h2>Scope and Acceptance</h2>
             <p>This Privacy Policy ("Policy") governs the collection, use, disclosure, and retention of information in connection with the mobile application "Plantfolio Plus" (the "App"), operated by Chunhou Li ("we," "us," or "our"). By installing, accessing, or using the App, you ("User" or "you") acknowledge that you have read, understood, and agree to be bound by this Policy. If you do not agree to this Policy, you must not use the App.</p>
@@ -116,7 +116,7 @@
             <h3>1.1 Data Provided by the User</h3>
             <p>In the course of using the App, the User may input or otherwise provide the following categories of data, which are Processed locally on the User’s device and, where iCloud sync is enabled, by Apple on behalf of the User:</p>
             <ul>
-                <li><strong>Plant and collection data:</strong> Names, scientific names, plant types, descriptions, research notes, light and soil preferences, pot materials, seasonal watering schedules, and start dates.</li>
+                <li><strong>Plant and collection data:</strong> Names, scientific names, plant types, descriptions, research notes, light and soil preferences, pot materials, placement, seasonal watering schedules, and start dates.</li>
                 <li><strong>Photographs:</strong> Images of plants or collections added to the App, with optional categorical labels (e.g., growth, flowers, problems).</li>
                 <li><strong>Sighting data:</strong> Plant sightings added to the App, including photographs, optional names or notes, and GPS coordinates (latitude and longitude). GPS coordinates may be derived from photo EXIF metadata or from the device's location at the time the sighting is created.</li>
                 <li><strong>Care records:</strong> Watering logs (dates, times, intensity, and notes), growth measurements (height, width, notes), fertilization logs (type, NPK, dosage, method, notes), pruning logs (type, technique, notes), plant status check reports (AI-generated health assessments and conversation history), and watering rescheduling or postponement.</li>
@@ -148,7 +148,7 @@
             <p>User Data is Processed solely for the following purposes:</p>
             <ul>
                 <li>To provide and maintain the core functionality of the App (plant and collection management, calendar, watering schedules, photographs, care logs, plant status checks, and sightings with map view).</li>
-                <li>To enable optional features such as watering reminders, calendar views, plant organization, AI-powered plant identification, care auto-fill, plant info update, and plant status checks via Google's Gemini API (each user-initiated), and the calendar weather overlay via Apple's WeatherKit (when enabled by the User).</li>
+                <li>To enable optional features such as watering and check-in reminders, calendar views, plant organization, AI-powered plant identification, care auto-fill, plant info update, and plant status checks via Google's Gemini API (each user-initiated), and the calendar weather overlay via Apple's WeatherKit (when enabled by the User).</li>
                 <li>Where the User has enabled iCloud sync, to permit storage and synchronization of User Data across the User’s devices via Apple’s iCloud service. Such Processing is performed by Apple pursuant to the User’s Apple ID and Apple’s terms and privacy policy; we do not perform or control such Processing.</li>
             </ul>
             <p>Where the User contacts us for support (e.g., by email), we Process only the information contained in or attached to that communication for the purpose of responding to the inquiry.</p>
@@ -194,7 +194,7 @@
             <ul>
                 <li><strong>App Store:</strong> Distribution and updates of the App. Apple may collect information in accordance with its Privacy Policy.</li>
                 <li><strong>iCloud:</strong> Optional synchronization of User Data. When enabled, User Data is stored on the User’s device and on Apple’s iCloud infrastructure; we do not store such data.</li>
-                <li><strong>Push Notifications:</strong> Delivery of watering reminders. Notification content is Processed by Apple’s notification services.</li>
+                <li><strong>Push Notifications:</strong> Delivery of watering reminders and occasional check-in reminders (scheduled on the User’s device after 30, 60, and 90 days without opening the App; opening the App resets them). Notification content is Processed by Apple’s notification services.</li>
                 <li><strong>WeatherKit (optional):</strong> When the User opts in to the calendar weather overlay and sets the plant location in Settings, the App queries Apple’s WeatherKit service for daily forecasts and historical conditions. Coordinates sent to WeatherKit are rounded to two decimal places (approximately 1 km) and are not associated with the User’s identity. WeatherKit responses are cached on the User’s device and, where iCloud sync is enabled, on Apple’s iCloud infrastructure. The overlay is disabled by default and can be turned off at any time in the App’s settings. We do not receive or store weather queries or responses.</li>
             </ul>
             <p>Apple’s Privacy Policy is available at: <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/privacy/</a>. Users are encouraged to review it.</p>
@@ -207,7 +207,7 @@
                         <li>Plant photos (1–6 images, compressed JPEG)</li>
                         <li>Plant name and scientific name (as contextual hints)</li>
                         <li>Collection member plant names (when identifying or assessing multi-plant collections)</li>
-                        <li>Pot material, soil layer composition, and location/climate description (text only, not GPS coordinates)</li>
+                        <li>Pot material, soil layer composition, plant placement, and location/climate description (text only, not GPS coordinates)</li>
                         <li>Species preferences stored from identification (light, humidity, temperature range, drainage, soil pH, watering method) and growing conditions (hemisphere)</li>
                         <li>Current seasonal watering intervals (spring, summer, fall, winter)</li>
                         <li>Recent care history: watering logs (latest 20 entries with date, action, and intensity), fertilization logs (latest 3 entries with type, NPK, and method), pruning logs (latest 3 entries with type), and growth measurements (latest 3 entries with height and width, for status checks)</li>
@@ -219,7 +219,7 @@
                 </li>
                 <li><strong>Processing by Google:</strong> Google processes the request and returns a response (identification result, care suggestions, or health assessment). Google's processing is subject to <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Google's Gemini API Terms of Service</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</li>
                 <li><strong>Results stored locally:</strong> The AI-generated response (identification notes, status check reports, conversation history) is stored on the User's device and, where iCloud sync is enabled, on Apple's iCloud infrastructure. We do not store or have access to these results.</li>
-                <li><strong>User-initiated only:</strong> No data is sent to Google unless the User explicitly triggers an identification, update, or status check action. The User's Gemini API key is stored locally in the App's settings on the User's device.</li>
+                <li><strong>User-initiated only:</strong> No data is sent to Google unless the User explicitly triggers an identification, update, or status check action. The User's Gemini API key is stored in the iOS Keychain on the User's device only (device-only accessibility; it is not synced to iCloud Keychain).</li>
             </ul>
 
             <h3>4.3 Export and Import</h3>

@@ -1,6 +1,6 @@
 # Translation Sync Reference
 
-Keep EN, ES, and ZH content aligned. When updating one locale, update all three.
+Keep EN, ES, ZH-Hans, and ZH-Hant content aligned. When updating one locale, update all four.
 
 ## Locale paths
 
@@ -8,7 +8,8 @@ Keep EN, ES, and ZH content aligned. When updating one locale, update all three.
 |--------|-------|---------------|---------|
 | EN | `index.html` | `custom-common-plants.html` | `privacy.html` |
 | ES | `es/index.html` | `es/custom-common-plants.html` | `es/privacy.html` |
-| ZH | `zh/index.html` | `zh/custom-common-plants.html` | `zh/privacy.html` |
+| ZH-Hans | `zh/index.html` | `zh/custom-common-plants.html` | `zh/privacy.html` |
+| ZH-Hant | `zh-Hant/index.html` | (none) | `zh-Hant/privacy.html` |
 
 ## Index page strings
 
@@ -41,7 +42,8 @@ When editing content:
 
 - [ ] Update `index.html` (EN)
 - [ ] Update `es/index.html` (ES)
-- [ ] Update `zh/index.html` (ZH)
-- [ ] If custom-common-plants: update all 3
-- [ ] If privacy: update all 3
+- [ ] Update `zh/index.html` (ZH-Hans)
+- [ ] Update `zh-Hant/index.html` (ZH-Hant)
+- [ ] If custom-common-plants: update EN/ES/ZH-Hans (no ZH-Hant page)
+- [ ] If privacy: update all 4
 - [ ] Verify lang switcher links and hreflang alternates
